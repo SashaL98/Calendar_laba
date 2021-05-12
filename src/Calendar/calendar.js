@@ -19,6 +19,18 @@ const Month = {
   December: 11
 };
 
+const Holiday = [
+  [1, 0],
+  [7, 0],
+  [23, 1],
+  [8, 2],
+  [1, 4],
+  [9, 4],
+  [1, 5],
+  [1, 8],
+  [4, 10]
+];
+
 export function areEqual(a, b) {
   if (!a || !b) return false;
 
@@ -31,6 +43,18 @@ export function areEqual(a, b) {
 
 export function isLeapYear(year) {
   return !(year % 4 || (!(year % 100) && year % 400));
+}
+
+export function isholiday(date) {
+  const day = date.getDate();
+  const month = date.getMonth();
+
+  for (let i = 0; i < 9; i++) {
+    if (day === Holiday[i][0] && month === Holiday[i][1]) {
+      return true;
+    }
+  }
+  return false;
 }
 
 export function getDaysInMonth(date) {

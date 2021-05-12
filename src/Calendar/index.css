@@ -38,6 +38,10 @@
   border: 2px solid dodgerblue;
 }
 
+.calendar .day.redDay {
+  color: red;
+}
+
 .calendar .day.today {
   background-color: dodgerblue;
   color: white;

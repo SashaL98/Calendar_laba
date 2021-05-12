@@ -156,7 +156,8 @@ export default class Calendar extends React.Component {
                       key={index}
                       className={classnames("day", {
                         today: calendar.areEqual(date, currentDate),
-                        selected: calendar.areEqual(date, selectedDate)
+                        selected: calendar.areEqual(date, selectedDate),
+                        redDay: calendar.isholiday(date)
                       })}
                       onClick={() => this.handleDayClick(date)}
                     >
