@@ -20,15 +20,16 @@ const Month = {
 };
 
 const Holiday = [
-  [1, 0],
-  [7, 0],
-  [23, 1],
-  [8, 2],
-  [1, 4],
-  [9, 4],
-  [1, 5],
-  [1, 8],
-  [4, 10]
+  [1, 0, "Новый год"],
+  [7, 0, "Рождество Христово"],
+  [23, 1, "День защитника Отечества"],
+  [8, 2, "Международный женский день"],
+  [1, 4, "Праздник Весны и Труда"],
+  [9, 4, "День Победы"],
+  [1, 5, "Международный день защиты детей"],
+  [12, 5, "День России"],
+  [1, 8, "День Знаний"],
+  [4, 10, "День народного единства"]
 ];
 
 export function areEqual(a, b) {
@@ -49,9 +50,21 @@ export function isholiday(date) {
   const day = date.getDate();
   const month = date.getMonth();
 
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 10; i++) {
     if (day === Holiday[i][0] && month === Holiday[i][1]) {
       return true;
+    }
+  }
+  return false;
+}
+
+export function isholiday_Name(date) {
+  const day = date.getDate();
+  const month = date.getMonth();
+
+  for (let i = 0; i < 10; i++) {
+    if (day === Holiday[i][0] && month === Holiday[i][1]) {
+      return Holiday[i][2];
     }
   }
   return false;

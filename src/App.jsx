@@ -2,6 +2,8 @@ import React from "react";
 
 import Calendar from "./Calendar";
 
+import * as calendar from "./Calendar/calendar";
+
 export default class App extends React.Component {
   state = {
     date: null
@@ -28,6 +30,10 @@ export default class App extends React.Component {
         )}
 
         <Calendar onChange={this.handleDateChange} />
+
+        {date && calendar.isholiday(date) && (
+          <p>Праздник: {calendar.isholiday_Name(date)}</p>
+        )}
       </div>
     );
   }
