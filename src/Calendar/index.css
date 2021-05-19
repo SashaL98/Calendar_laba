@@ -23,7 +23,7 @@
 }
 
 .calendar .day {
-  padding: 4px 8px;
+  padding: 4px 10px;
   vertical-align: middle;
   text-align: center;
   border: 2px solid transparent;
@@ -38,8 +38,14 @@
   border: 2px solid dodgerblue;
 }
 
+.calendar .day.yellow {
+  color: rgb(0, 4, 252);
+  font-weight: bold;
+}
+
 .calendar .day.redDay {
   color: red;
+  font-weight: bold;
 }
 
 .calendar .day.today {

@@ -155,9 +155,10 @@ export default class Calendar extends React.Component {
                     <td
                       key={index}
                       className={classnames("day", {
+                        yellow: calendar.isdayoff(date),
+                        redDay: calendar.isholiday(date),
                         today: calendar.areEqual(date, currentDate),
-                        selected: calendar.areEqual(date, selectedDate),
-                        redDay: calendar.isholiday(date)
+                        selected: calendar.areEqual(date, selectedDate)
                       })}
                       onClick={() => this.handleDayClick(date)}
                     >

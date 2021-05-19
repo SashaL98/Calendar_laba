@@ -58,6 +58,15 @@ export function isholiday(date) {
   return false;
 }
 
+export function isdayoff(date) {
+  const monthStartsOn = getDayOfWeek(date);
+
+  if (monthStartsOn === 5 || monthStartsOn === 6) {
+    return true;
+  }
+  return false;
+}
+
 export function isholiday_Name(date) {
   const day = date.getDate();
   const month = date.getMonth();
